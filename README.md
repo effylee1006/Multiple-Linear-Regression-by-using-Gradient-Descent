@@ -113,8 +113,11 @@ x1 = feedrate2000 gain10 摩擦力方向 ;
 x2 = feedrate2000 gain10 速度 ;
 x3 = feedrate2000 gain10 加速度 ;
 y = feedrate2000 gain10 電流 ;
+
 以下為Cost Function 計算方式 :
+
 ![image](https://user-images.githubusercontent.com/97490448/149305286-4e944260-a6e9-48b1-96ca-3c2d42d557c5.png)
+
 經過 m 次迭代，minimize cost function，輸出最佳參數。
 
 ### 2.4 梯度下降的實現

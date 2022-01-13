@@ -36,7 +36,14 @@
 我們需要使用到Cost Function（代價函數），代價函數越小，說明線性回歸地越好（和訓練集擬合地越好），當然最小就是0，即完全擬合。
 
 ![image](https://user-images.githubusercontent.com/97221948/149253700-3a19abdb-c972-4ba7-8679-fb1c55790ae0.png)
-![image](https://user-images.githubusercontent.com/97221948/149253757-ac01d02b-ddb1-4fe5-899b-e86950f9d1cb.png)
+
+多變量的假設h表示為：
+
+![image](https://user-images.githubusercontent.com/97221948/149254579-8e3515fc-52ff-4127-b91a-73870b4fc6eb.png)
+
+代價函數：
+
+![image](https://user-images.githubusercontent.com/97221948/149254602-7a98e36c-e702-40ff-860a-46ae4eb42371.png)
 
 2)舉個實際的例子：
 我們想要根據房子的大小，預測房子的價格，給定如下數據集：
@@ -73,7 +80,7 @@ J(0,0.5) = 1/(2*3) * [(h(1)-1)^2+(h(2)-2)^2+(h(3)-3)^2] = 0.58；
 
 注意：如果是線性回歸，則costfunctionJ與theta0、theta1的函數一定是碗狀的，即只有一個最小點。
 
-### 2.2 梯度下降：解決線性回歸的方法之一
+2.2 梯度下降：解決線性回歸的方法之一
 但是又一個問題引出了，雖然給定一個函數，我們能夠根據cost function知道這個函數擬合的好不好，但是畢竟函數有這麼多，總不可能一個一個試吧？因此我們引出了梯度下降：能夠找出cost function函數的最小值；梯度下降原理：將函數比作一座山，我們站在某個山坡上，往四周看，從哪個方向向下走一小步，能夠下降的最快。當然解決問題的方法有很多，梯度下降只是其中一個，還有一種方法叫Normal Equation。
 
 方法：

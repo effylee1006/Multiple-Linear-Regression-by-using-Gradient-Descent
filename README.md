@@ -162,3 +162,46 @@ end
 
 ```
 
+## 3  梯度下降的擴展和比較
+### 3.1 最小平方法
+利用相同的物理模型，做最小平方法的參數估計，minimize 殘差平方和，當殘差平方和越小，代表參數估計的越好
+
+![image](https://user-images.githubusercontent.com/97490448/149339344-8e894986-e7b9-414c-8366-b36458dd497f.png)
+
+執行步驟 
+
+(1)將物理模型簡化為 𝑦=𝑊∗𝑋 
+
+(2)計算MSE 
+
+![image](https://user-images.githubusercontent.com/97490448/149340548-e50351e1-da9a-43ee-946f-8222a5fd8cbe.png)
+
+(3)利用微分，求一階導數為0 
+
+![image](https://user-images.githubusercontent.com/97490448/149340773-8551ea16-166e-49bd-b2a2-758f5e1fe1e7.png)
+
+(4)移項後，得到β  
+
+![image](https://user-images.githubusercontent.com/97490448/149340897-91687201-61ff-4434-b127-b18760da5f13.png)
+
+### 3.2 梯度下降法與最小平方法之比較
+
+一般估計參數經常使用到最小平方法，本節欲探討最小平方法及梯度下降法的相同及相異之處。
+
+(1)相同處
+
+-最小平方法跟梯度下降法都是通過求導數來求損失涵數的最小值  
+
+-給定已知數據的前提下估計參數，再給訂新的數據進行估算 
+
+-使估計值和實際值的殘差為最小
+
+(2)相異處
+
+-最小平方法求導數後，找出global minimum，非迭代方法 ;
+-梯度下降法在使用者定義迭代次數後，找 local minimum，對初始點及learning rate的設定很敏感 ;
+
+
+
+
+

@@ -61,6 +61,16 @@ Notation :
 ![image](https://user-images.githubusercontent.com/97221948/149254602-7a98e36c-e702-40ff-860a-46ae4eb42371.png)
 
 找出使得代價函數最小的一系列參數。
+
+### 2.2 梯度下降執行步驟
+
+雖然給定一個函數，我們能夠根據cost function了解參數估計的好壞，然而函數眾多，不易計算，故引入梯度下降法：找出cost function函數的最小值；梯度下降原理：將函數比作一座山，尋找往哪個方向，能夠下降的最快。
+
+方法：
+(1)先確定向下一步的步伐大小，即Learning rate；
+(2)任意給定一個初始值；
+(3)透過梯度下降計算方式，更新參數；
+
 多變量線性回歸的批量梯度下降算法為：
 
 ![image](https://user-images.githubusercontent.com/97221948/149254754-a5084d02-2375-40e4-a108-0a44ca581a17.png)
@@ -69,9 +79,24 @@ Notation :
 
 ![image](https://user-images.githubusercontent.com/97221948/149254782-d208a356-e2c9-4b1c-a031-694a2c4e2a04.png)
 
+(4)當下降的高度小於某個定義的值，則停止下降。
 
+特點：
+(1)初始點不同，獲得的最小值也不同，因此梯度下降求得的只是局部最小值；
+(2)越接近最小值時，下降速度越慢。
 
-### 2.2梯度下降法應用於建構物理模型
+下圖說明梯度下降的過程：
+
+![image](https://user-images.githubusercontent.com/97221948/149253895-c0ca2940-cb5b-442e-9779-869e272602fa.png)
+
+從上面的圖可以看出，初始點不同，獲得的最小值也不同，因此梯度下降求得的只是局部最小值。
+若learning rate 設定太小，找到函數最小值的速度很慢，但若太大，可能會可能會出現overshoot the minimum的現象，下圖就是overshoot minimum現象：
+
+梯度下降是通過不停的迭代，而我們比較關注迭代的次數，因為這關係到梯度下降的執行速度，為了減少迭代次數，因此引入了Feature Scaling。
+
+![image](https://user-images.githubusercontent.com/97221948/149253828-32a1449b-4c62-436c-bbbe-01c6c3b0b743.png)
+
+### 2.3梯度下降法應用於建構物理模型
 
 (1)定義目標 :
 
@@ -88,44 +113,9 @@ x1 = feedrate2000 gain10 摩擦力方向 ;
 x2 = feedrate2000 gain10 速度 ;
 x3 = feedrate2000 gain10 加速度 ;
 y = feedrate2000 gain10 電流 ;
-
-minimize ![image](https://user-images.githubusercontent.com/97490448/149305286-4e944260-a6e9-48b1-96ca-3c2d42d557c5.png)
-
-### 2.2 梯度下降：解決線性回歸的方法之一
-但是又一個問題引出了，雖然給定一個函數，我們能夠根據cost function知道這個函數擬合的好不好，但是畢竟函數有這麼多，總不可能一個一個試吧？因此我們引出了梯度下降：能夠找出cost function函數的最小值；梯度下降原理：將函數比作一座山，我們站在某個山坡上，往四周看，從哪個方向向下走一小步，能夠下降的最快。當然解決問題的方法有很多，梯度下降只是其中一個，還有一種方法叫Normal Equation。
-
-方法：
-(1)先確定向下一步的步伐大小，我們稱為Learning rate；
-(2)任意給定一個初始值：；
-(3)確定一個向下的方向，並向下走預先規定的步伐，並更新 ；
-(4)當下降的高度小於某個定義的值，則停止下降。
-
-算法：
-
-特點：
-(1)初始點不同，獲得的最小值也不同，因此梯度下降求得的只是局部最小值；
-(2)越接近最小值時，下降速度越慢。
-
-問題a：如果初始值就在local minimum的位置，則會如何變化？
-答：因為已經在local minimum位置，所以derivative肯定是0，因此不會變化。
-如果取到一個正確的值，則cost function應該越來越小。
-問題b：怎麼取值？
-答：隨時觀察值，如果cost function變小了，則ok，反之，則再取一個更小的值。
-
-下圖就詳細的說明了梯度下降的過程：
-
-![image](https://user-images.githubusercontent.com/97221948/149253895-c0ca2940-cb5b-442e-9779-869e272602fa.png)
-
-從上面的圖可以看出：初始點不同，獲得的最小值也不同，因此梯度下降求得的只是局部最小值。
-
-注意：下降的步伐大小非常重要，因為如果太小，則找到函數最小值的速度就很慢，如果太大，則可能會出現overshoot the minimum的現象；下圖就是overshoot minimum現象：
-
-如果Learning rate取值後發現J function 增長了，則需要減小Learning rate的值。
-因此我們能夠對cost function運用梯度下降，即將梯度下降和線性回歸進行整合，如下圖所示：
-
-梯度下降是通過不停的迭代，而我們比較關注迭代的次數，因為這關係到梯度下降的執行速度，為了減少迭代次數，因此引入了Feature Scaling。
-
-![image](https://user-images.githubusercontent.com/97221948/149253828-32a1449b-4c62-436c-bbbe-01c6c3b0b743.png)
+以下為Cost Function 計算方式 :
+![image](https://user-images.githubusercontent.com/97490448/149305286-4e944260-a6e9-48b1-96ca-3c2d42d557c5.png)
+經過 m 次迭代，minimize cost function，輸出最佳參數。
 
 ### 2.4 梯度下降的實現
 
@@ -159,7 +149,7 @@ for k = 1:1:iterations
     J(k) = s(k)/(2*m);  %代價函数
     theta = theta-(alpha/m)*p;  %更新theta參數
     if k>1  %為了下面k-1有索引
-        if J(k-1)-J(k)==0   %若誤差小於10^2，則停止迭代         
+        if J(k-1)-J(k)==0   %若沒有誤差，則停止迭代         
              break;
         end
     end

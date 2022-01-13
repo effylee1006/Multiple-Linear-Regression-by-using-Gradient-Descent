@@ -98,14 +98,19 @@ J(0,0.5) = 1/(2*3) * [(h(1)-1)^2+(h(2)-2)^2+(h(3)-3)^2] = 0.58；
 
 方法：
 (1)先確定向下一步的步伐大小，我們稱為Learning rate；
+
 (2)任意給定一個初始值 ![image](https://user-images.githubusercontent.com/97221948/149256849-7bfce4ae-2379-4282-8e1a-927c0976428e.png) ![image](https://user-images.githubusercontent.com/97221948/149256907-37fdb9a3-8d61-4c3f-b56a-78edef3accfd.png)；
+
 (3)確定一個向下的方向，並向下走預先規定的步伐，並更新 ![image](https://user-images.githubusercontent.com/97221948/149256849-7bfce4ae-2379-4282-8e1a-927c0976428e.png) ![image](https://user-images.githubusercontent.com/97221948/149256907-37fdb9a3-8d61-4c3f-b56a-78edef3accfd.png)；
+
 (4)當下降的高度小於某個定義的值，則停止下降。
 
 算法：
 
 特點：
+
 (1)初始點不同，獲得的最小值也不同，因此梯度下降求得的只是局部最小值；
+
 (2)越接近最小值時，下降速度越慢。
 
 問題a：如果初始值就在local minimum的位置，則會如何變化？

@@ -176,6 +176,8 @@ alpha = 0.01; %学习率  %改变学习率，结果不一样
 s = zeros(iterations, 1);  %代价函数中的累加值
 J = zeros(iterations, 1);  %代价函数值
 
+12345678910
+
 for k = 1:1:iterations 
     p = zeros(5, 1);  %迭代一次，累计清零
     for i = 1:1:m

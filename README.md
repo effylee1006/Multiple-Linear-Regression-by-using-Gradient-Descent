@@ -34,7 +34,9 @@
 1)下面給出單變量線性回歸的模型：
 從上面“方法”中，我們肯定有一個疑問，怎麼樣能夠看出線性函數擬合的好不好呢？
 我們需要使用到Cost Function（代價函數），代價函數越小，說明線性回歸地越好（和訓練集擬合地越好），當然最小就是0，即完全擬合。
+
 ![image](https://user-images.githubusercontent.com/97221948/149253700-3a19abdb-c972-4ba7-8679-fb1c55790ae0.png)
+![image](https://user-images.githubusercontent.com/97221948/149253757-ac01d02b-ddb1-4fe5-899b-e86950f9d1cb.png)
 
 2)舉個實際的例子：
 我們想要根據房子的大小，預測房子的價格，給定如下數據集：
@@ -102,10 +104,9 @@ J(0,0.5) = 1/(2*3) * [(h(1)-1)^2+(h(2)-2)^2+(h(3)-3)^2] = 0.58；
 因此我們能夠對cost function運用梯度下降，即將梯度下降和線性回歸進行整合，如下圖所示：
 
 梯度下降是通過不停的迭代，而我們比較關注迭代的次數，因為這關係到梯度下降的執行速度，為了減少迭代次數，因此引入了Feature Scaling。
-————————————————
+![image](https://user-images.githubusercontent.com/97221948/149253828-32a1449b-4c62-436c-bbbe-01c6c3b0b743.png)
 
-版权声明：本文为CSDN博主「Robin_just」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/shaguabufadai/article/details/72858293
+
 ————————————————
 版权声明：本文为CSDN博主「Robin_just」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/shaguabufadai/article/details/72858293

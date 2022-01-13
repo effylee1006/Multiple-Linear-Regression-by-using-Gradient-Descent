@@ -127,7 +127,8 @@ J(0,0.5) = 1/(2*3) * [(h(1)-1)^2+(h(2)-2)^2+(h(3)-3)^2] = 0.58；
 梯度下降是通過不停的迭代，而我們比較關注迭代的次數，因為這關係到梯度下降的執行速度，為了減少迭代次數，因此引入了Feature Scaling。
 
 ![image](https://user-images.githubusercontent.com/97221948/149253828-32a1449b-4c62-436c-bbbe-01c6c3b0b743.png)
-,,,
+
+'''
 clear
 clc
 gain10_f2000_1st_Data=importdata('C://Users//Effy//Desktop//Delta//211207_vibration//txt//gain10_f2000_1st.txt');
@@ -173,6 +174,6 @@ for k = 1:1:iterations
 end
 
 theta  %输出显示theta的值
-,,,
+'''
 
 

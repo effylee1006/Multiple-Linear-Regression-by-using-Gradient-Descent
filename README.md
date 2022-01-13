@@ -129,7 +129,7 @@ J(0,0.5) = 1/(2*3) * [(h(1)-1)^2+(h(2)-2)^2+(h(3)-3)^2] = 0.58；
 ![image](https://user-images.githubusercontent.com/97221948/149253828-32a1449b-4c62-436c-bbbe-01c6c3b0b743.png)
 
 
-'''
+```
 
 clear
 clc
@@ -177,6 +177,6 @@ end
 
 theta  %输出显示theta的值
 
-'''
+```
 
 

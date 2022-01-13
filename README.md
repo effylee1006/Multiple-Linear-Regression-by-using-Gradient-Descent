@@ -216,7 +216,7 @@ end
 
 -梯度下降法在使用者定義迭代次數後，找 local minimum，對初始點及learning rate的設定很敏感
 
+## Reference
 
-
-
+https://blog.csdn.net/shaguabufadai/article/details/72858293
 

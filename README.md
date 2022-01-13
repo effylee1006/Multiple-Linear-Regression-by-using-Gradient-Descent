@@ -39,22 +39,6 @@
 
 ![image](https://user-images.githubusercontent.com/97221948/149253700-3a19abdb-c972-4ba7-8679-fb1c55790ae0.png)
 
-多變量的假設h表示為：
-
-![image](https://user-images.githubusercontent.com/97221948/149254579-8e3515fc-52ff-4127-b91a-73870b4fc6eb.png)
-
-代價函數：
-
-![image](https://user-images.githubusercontent.com/97221948/149254602-7a98e36c-e702-40ff-860a-46ae4eb42371.png)
-
-找出使得代價函數最小的一系列參數。
-多變量線性回歸的批量梯度下降算法為：
-
-![image](https://user-images.githubusercontent.com/97221948/149254754-a5084d02-2375-40e4-a108-0a44ca581a17.png)
-
-求導後得到：
-
-![image](https://user-images.githubusercontent.com/97221948/149254782-d208a356-e2c9-4b1c-a031-694a2c4e2a04.png)
 
 
 
@@ -106,6 +90,23 @@ J(0,0.5) = 1/(2*3) * [(h(1)-1)^2+(h(2)-2)^2+(h(3)-3)^2] = 0.58；
 (4)當下降的高度小於某個定義的值，則停止下降。
 
 算法：
+
+多變量的假設h表示為：
+
+![image](https://user-images.githubusercontent.com/97221948/149254579-8e3515fc-52ff-4127-b91a-73870b4fc6eb.png)
+
+代價函數：
+
+![image](https://user-images.githubusercontent.com/97221948/149254602-7a98e36c-e702-40ff-860a-46ae4eb42371.png)
+
+找出使得代價函數最小的一系列參數。
+多變量線性回歸的批量梯度下降算法為：
+
+![image](https://user-images.githubusercontent.com/97221948/149254754-a5084d02-2375-40e4-a108-0a44ca581a17.png)
+
+求導後得到：
+
+![image](https://user-images.githubusercontent.com/97221948/149254782-d208a356-e2c9-4b1c-a031-694a2c4e2a04.png)
 
 特點：
 

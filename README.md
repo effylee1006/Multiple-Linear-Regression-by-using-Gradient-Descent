@@ -96,6 +96,8 @@ J(0,0.5) = 1/(2*3) * [(h(1)-1)^2+(h(2)-2)^2+(h(3)-3)^2] = 0.58；
 
 下圖就詳細的說明了梯度下降的過程：
 
+![image](https://user-images.githubusercontent.com/97221948/149253895-c0ca2940-cb5b-442e-9779-869e272602fa.png)
+
 從上面的圖可以看出：初始點不同，獲得的最小值也不同，因此梯度下降求得的只是局部最小值。
 
 注意：下降的步伐大小非常重要，因為如果太小，則找到函數最小值的速度就很慢，如果太大，則可能會出現overshoot the minimum的現象；下圖就是overshoot minimum現象：
@@ -104,9 +106,8 @@ J(0,0.5) = 1/(2*3) * [(h(1)-1)^2+(h(2)-2)^2+(h(3)-3)^2] = 0.58；
 因此我們能夠對cost function運用梯度下降，即將梯度下降和線性回歸進行整合，如下圖所示：
 
 梯度下降是通過不停的迭代，而我們比較關注迭代的次數，因為這關係到梯度下降的執行速度，為了減少迭代次數，因此引入了Feature Scaling。
+
 ![image](https://user-images.githubusercontent.com/97221948/149253828-32a1449b-4c62-436c-bbbe-01c6c3b0b743.png)
 
 
-————————————————
-版权声明：本文为CSDN博主「Robin_just」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/shaguabufadai/article/details/72858293
+

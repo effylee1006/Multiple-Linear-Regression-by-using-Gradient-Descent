@@ -45,6 +45,17 @@
 
 ![image](https://user-images.githubusercontent.com/97221948/149254602-7a98e36c-e702-40ff-860a-46ae4eb42371.png)
 
+找出使得代價函數最小的一系列參數。
+多變量線性回歸的批量梯度下降算法為：
+
+![image](https://user-images.githubusercontent.com/97221948/149254754-a5084d02-2375-40e4-a108-0a44ca581a17.png)
+
+求導後得到：
+
+![image](https://user-images.githubusercontent.com/97221948/149254782-d208a356-e2c9-4b1c-a031-694a2c4e2a04.png)
+
+
+
 2)舉個實際的例子：
 我們想要根據房子的大小，預測房子的價格，給定如下數據集：
 

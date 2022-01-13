@@ -127,6 +127,52 @@ J(0,0.5) = 1/(2*3) * [(h(1)-1)^2+(h(2)-2)^2+(h(3)-3)^2] = 0.58；
 梯度下降是通過不停的迭代，而我們比較關注迭代的次數，因為這關係到梯度下降的執行速度，為了減少迭代次數，因此引入了Feature Scaling。
 
 ![image](https://user-images.githubusercontent.com/97221948/149253828-32a1449b-4c62-436c-bbbe-01c6c3b0b743.png)
+,,,
+clear
+clc
+gain10_f2000_1st_Data=importdata('C://Users//Effy//Desktop//Delta//211207_vibration//txt//gain10_f2000_1st.txt');
+[gain10_f2000_1st_X] = inputdata_and_dataprocessing(gain10_f2000_1st_Data.data);
+x1 = gain10_f2000_1st_X(:, 1);  % the size of the house
+x2 = gain10_f2000_1st_X(:, 2);  % the number of bedrooms
+x3 = gain10_f2000_1st_X(:, 3);  % the size of the house
+x4 = gain10_f2000_1st_X(:, 4);  % the number of bedrooms
+yT = gain10_f2000_1st_X(:, 5);  % the price of the house
+y = yT.';
+m = length(y); % number of training examples
+% figure(1) %图1
+% plot3(x1,x2,y, 'rx', 'MarkerSize', 10); % Plot the data
+% xlabel('the size of the house'); % Set the x axis label
+% ylabel('the number of bedrooms'); % Set the y axis label
+% zlabel('the price of the house'); % Set the z axis label
+% grid on;
 
+%使x1、x2在[0,1]范围内
+%x = [ones(1,m); 0.0001*x1.'; 0.1*x2.']; % 加第一列为全1，之后为x1、x2
+x = [ones(1,m); x1.'; 0.0001*x2.'; 0.0001*x3.'; 0.0001*x4.']; % 加第一列为全1，之后为x1、x2
+theta = zeros(5, 1); % initialize fitting parameters
+
+iterations = 200; %迭代最大次数
+alpha = 0.01; %学习率  %改变学习率，结果不一样
+s = zeros(iterations, 1);  %代价函数中的累加值
+J = zeros(iterations, 1);  %代价函数值
+
+for k = 1:1:iterations 
+    p = zeros(5, 1);  %迭代一次，累计清零
+    for i = 1:1:m
+        s(k) = s(k)+(theta.'*x(:,i)-y(i)).^2; %求J函数的累加
+        %求偏导
+        p = p+(theta.'*x(:,i)-y(:,i))*x(:,i); %对theta求偏导的累加   
+    end         
+    J(k) = s(k)/(2*m);  %代价函数
+    theta = theta-(alpha/m)*p;  %更新theta参数
+    if k>1  %为了下面k-1有索引
+        if J(k-1)-J(k)<1e+2   %若误差小于10^2，则停止迭代         
+             break;
+        end
+    end
+end
+
+theta  %输出显示theta的值
+,,,
 
 

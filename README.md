@@ -212,6 +212,7 @@ end
 (2)相異處
 
 -最小平方法求導數後，找出global minimum，非迭代方法 ;
+
 -梯度下降法在使用者定義迭代次數後，找 local minimum，對初始點及learning rate的設定很敏感
 
 
